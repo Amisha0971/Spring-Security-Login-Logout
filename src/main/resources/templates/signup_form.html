@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">   
+<head>
+<title>Insert title here</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px;
+  
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 13px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ }
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 18px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.p{
+text-color:white;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+body{
+       background-image: url('images/background567.jfif');
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+        background-size: cover;
+      }
+</style>
+</head>
+<body>
+
+<th:block th:if="${session.msg}">
+<p style="color:white;" class="text-center fs-4 text-success">[[${session.msg}]]</p>
+<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+</th:block>
+
+
+
+<form  action="createUser" method="post">
+  <div class="container">
+  <center><h2><U><p style="color:white;">REGISTER FORM</U></h2></center>
+    <p><p style="color:white;">Please fill in this form to create an account.</p>
+    <hr>
+    <label for="name"><b><p style="color:white;">Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
+    
+    <label for="email"><b><p style="color:white;">Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b><p style="color:white;">Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    
+    <label for="mobileno"><b><p style="color:white;">MobileNo</b></label>
+    <input type="text" placeholder="Enter contactno" name="mobileno" required>
+    
+    <label for="city"><b><p style="color:white;">City</b></label>
+    <input type="text" placeholder="Enter City" name="city" required>
+    
+    <button type="submit" class="btn">Register</button> 
+   </div>
+</form>
+</body>
+</html>
